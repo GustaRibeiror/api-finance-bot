@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('category_id')->constrained();
             $table->string('description')->nullable();
-            $table->decimal('amount', 10, 2);
+            $table->unsignedBigInteger('amount');
             $table->enum('type', ['income', 'expense'])->default('expense');
             $table->timestamps();
         });
