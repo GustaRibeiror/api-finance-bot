@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->text('content');
+            $table->foreignId('user_id')->nullable()->constrained();
             $table->enum('from', ['user', 'bot'])->default('user');
             $table->timestamps();
         });

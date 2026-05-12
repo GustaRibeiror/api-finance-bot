@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->decimal('income_goal', 10, 2);
+            $table->unsignedBigInteger('income_goal')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

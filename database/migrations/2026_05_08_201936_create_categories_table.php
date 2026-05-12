@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->enum('type', ['income', 'expense'])->default('expense');
             $table->string('name');
+            $table->foreignid('user_id');
             $table->timestamps();
         });
     }
